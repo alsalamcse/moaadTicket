@@ -1,5 +1,6 @@
 package com.moaadticket.moaadticket;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,7 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
         String lname=etLast.getText().toString();
         if (email.length()<4 ||
                 email.indexOf('@')<0||
-                email.indexOf('.')<0);
+                email.indexOf('.')<0)
         {
             etEmail.setError("Wrong Email");
             isok=false;
@@ -81,17 +82,21 @@ public class SignUpActivity extends AppCompatActivity {
      */
 
 
-    private void creatAcount(String email ,String passw){
+    private void creatAcount(String email, String passw) {
         auth.createUserWithEmailAndPassword(email,passw).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful())
+                if(task.isSuccessful())
                 {
-                    Toast.makeText(SignUpActivity.this"Authentication failed."+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    task.getException().printStackTrace();
-
+                    Toast.makeText(SignUpActivity.this, "Authentication Successful.", Toast.LENGTH_SHORT).show();
+                    //updateUserProfile(task.getResult().getUser());
+                    finish();
                 }
-
+                else
+                {
+                    Toast.makeText(SignUpActivity.this, "Authentication failed."+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
+                }
             }
         });
     }
