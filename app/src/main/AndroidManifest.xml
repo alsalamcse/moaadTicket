@@ -16,7 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".matches_date" />
+        <activity android:name=".StadiumActivity" />
+        <activity android:name=".WhereTheGameWillBe" />
+        <activity android:name=".Gates" />
+        <activity android:name=".Seat" />
+        <activity android:name=".BuyTickets" />
+        <activity android:name=".TheTicket"></activity>
     </application>
 
 </manifest>
