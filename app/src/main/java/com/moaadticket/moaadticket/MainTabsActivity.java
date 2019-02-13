@@ -3,11 +3,12 @@ package com.moaadticket.moaadticket;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Seat extends AppCompatActivity {
+public class MainTabsActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seat);
+        setContentView(R.layout.activity_main_tabs);
     }
 }

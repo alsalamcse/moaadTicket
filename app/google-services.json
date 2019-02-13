@@ -1,10 +1,63 @@
 {
   "project_info": {
-    "project_number": "720756617306",
-    "firebase_url": "https://moaadticket-f1f52.firebaseio.com",
-    "project_id": "moaadticket-f1f52",
-    "storage_bucket": "moaadticket-f1f52.appspot.com"
+    "project_number": "501668783090",
+    "firebase_url": "https://moaadticket.firebaseio.com",
+    "project_id": "moaadticket",
+    "storage_bucket": "moaadticket.appspot.com"
   },
-  "client": [],
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501668783090:android:b3e4e8923727288c",
+        "android_client_info": {
+          "package_name": "com.moaadticket.moaadticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501668783090-28j37q878o8oh427i0clmqtk7hc0f5gd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moaadticket.moaadticket",
+            "certificate_hash": "3d920b70f8988634c1ed27ef030165a28458403c"
+          }
+        },
+        {
+          "client_id": "501668783090-lg2l39kr96ddhdr54dc6mpikamnjqtt3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moaadticket.moaadticket",
+            "certificate_hash": "8d4e87598d212bdb282d05faa7766dc9c486dbdf"
+          }
+        },
+        {
+          "client_id": "501668783090-laeqan6lepudk3b1kqm4gjugausphfq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQLesqMj4qBmhgxnDDGDjl1eM33XgJxok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501668783090-laeqan6lepudk3b1kqm4gjugausphfq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
   "configuration_version": "1"
 }

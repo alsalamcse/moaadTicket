@@ -6,4 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".BuyTickets">
 
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="buy now"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="price : 200$"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="362dp" />
 </android.support.constraint.ConstraintLayout>
