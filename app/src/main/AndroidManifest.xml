@@ -19,8 +19,6 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".matches_date" />
         <activity android:name=".StadiumActivity" />
-        <activity android:name=".WhereTheGameWillBe" />
-        <activity android:name=".Gates" />
         <activity android:name=".BuyTickets" />
         <activity android:name=".TheTicket" />
         <activity android:name=".LoginActivity" />
