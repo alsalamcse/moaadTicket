@@ -12,13 +12,43 @@
         android:layout_height="wrap_content"
         android:hint="buy now"
         tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="405dp" />
+        tools:layout_editor_absoluteY="405dp"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="224dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Visa Card"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="2dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="224dp"
         android:layout_height="wrap_content"
-        android:hint="price : 200$"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="362dp" />
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="53dp" />
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Price 500$"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="99dp"
+        tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>
