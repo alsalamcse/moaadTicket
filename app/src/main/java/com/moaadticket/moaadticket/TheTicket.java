@@ -15,9 +15,9 @@ public class TheTicket extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_ticket);
-        et1 = (EditText)findViewById(R.id.et2);
+        et1 = (EditText)findViewById(R.id.et1);
         et2 = (EditText)findViewById(R.id.et2);
-        et3 = (EditText)findViewById(R.id.et2);
+        et3 = (EditText)findViewById(R.id.et3);
 
     }
 }
