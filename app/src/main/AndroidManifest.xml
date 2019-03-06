@@ -23,7 +23,9 @@
         <activity android:name=".TheTicket" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainTabsActivity" />
-        <activity android:name=".AddTaskActivity"></activity>
+        <activity android:name=".AddTaskActivity" />
+        <activity android:name=".AutofitRecyclerView" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
