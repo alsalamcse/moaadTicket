@@ -25,7 +25,8 @@
         <activity android:name=".MainTabsActivity" />
         <activity android:name=".AddTaskActivity" />
         <activity android:name=".AutofitRecyclerView" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TaskAdapter"></activity>
     </application>
 
 </manifest>
