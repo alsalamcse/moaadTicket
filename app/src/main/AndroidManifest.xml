@@ -16,17 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" />
         <activity android:name=".matches_date" />
         <activity android:name=".StadiumActivity" />
         <activity android:name=".BuyTickets" />
         <activity android:name=".TheTicket" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".MainTabsActivity" />
         <activity android:name=".AddTaskActivity" />
         <activity android:name=".AutofitRecyclerView" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".TaskAdapter"></activity>
+        <activity android:name=".TaskAdapter" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>

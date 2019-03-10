@@ -20,9 +20,9 @@ public class SignUpActivity extends AppCompatActivity {
     //1.add auth to project
     private FirebaseAuth auth;// to make SignIn ,SignUp
     private FirebaseUser user;//user
-    private TextView etFirst;
-    private TextView etLast;
     private EditText etPssword;
+    private EditText etFirst;
+    private EditText etLast;
     private EditText etEmail;
     private Button btnSave;
     @Override
@@ -34,8 +34,8 @@ public class SignUpActivity extends AppCompatActivity {
         etEmail = (EditText)findViewById(R.id.etEmail);
         etPssword = (EditText)findViewById(R.id.etPassword);
         btnSave = (Button) findViewById(R.id.btnSave);
-        etFirst = findViewById(R.id.tvFirst);
-        etLast = findViewById(R.id.tvLast);
+        etFirst = findViewById(R.id.etFirst);
+        etLast = findViewById(R.id.etLast);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,4 +102,3 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 }
-
