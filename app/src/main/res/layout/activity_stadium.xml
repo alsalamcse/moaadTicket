@@ -28,125 +28,125 @@
         tools:layout_editor_absoluteY="41dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnR3"
         android:layout_width="284dp"
         android:layout_height="37dp"
-        android:text="Button"
+        android:hint="Row 3 "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="78dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnR4"
         android:layout_width="284dp"
         android:layout_height="37dp"
-        android:text="Button"
+        android:hint="Row 4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="115dp" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnR15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:hint="Row 15"
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="199dp" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnR14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:hint="Row 14"
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="246dp" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnR13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:hint="Row 13"
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="293dp" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnR5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:hint="Row 5"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="151dp" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnR6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:hint="Row 6"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="199dp" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btnR7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:hint="Row 7"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="247dp" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/btnR8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:hint="Row 8"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="295dp" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/btnR10"
         android:layout_width="284dp"
         android:layout_height="37dp"
-        android:text="Button"
+        android:hint="Row 10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="380dp" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/btnR11"
         android:layout_width="284dp"
         android:layout_height="37dp"
-        android:text="Button"
+        android:hint="Row 11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="417dp" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/btnR9"
         android:layout_width="284dp"
         android:layout_height="37dp"
-        android:text="Button"
+        android:hint="Row 9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="343dp" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/btnR16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:hint="Row 16"
         tools:layout_editor_absoluteX="5dp"
         tools:layout_editor_absoluteY="150dp" />
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/btnR12"
         android:layout_width="284dp"
         android:layout_height="37dp"
-        android:text="Button"
+        android:hint="Row 12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="454dp" />
