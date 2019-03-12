@@ -1,5 +1,6 @@
 package com.moaadticket.moaadticket;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,91 +51,127 @@ public class StadiumActivity extends AppCompatActivity {
         btnR1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         });
         btnR1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         });
         btnR2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         });btnR3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         }); btnR16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent toMainActivity=new Intent(StadiumActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
 
             }
         });
+
+
 
 
     }
