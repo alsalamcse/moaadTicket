@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="101dp">
 
         <com.moaadticket.moaadticket.AutofitRecyclerView
             android:id="@+id/recycler_view"
@@ -17,6 +20,12 @@
             android:clipToPadding="false"
             android:columnWidth="@dimen/column_width"
             android:padding="@dimen/activity_horizontal_margin" />
+
+        <Button
+            android:id="@+id/btnBuy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Buy Ticket" />
 
     </LinearLayout>
 
