@@ -1,5 +1,6 @@
 package com.moaadticket.moaadticket;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,8 @@ public class NumberedAdapter extends RecyclerView.Adapter<NumberedAdapter.ViewHo
             @Override
             public void onClick(View v) {
                 Toast.makeText(holder.textView.getContext(), label, Toast.LENGTH_SHORT).show();
+                Intent toBuyTickets=new Intent(holder.textView.getContext(),BuyTickets.class);
+                holder.textView.getContext().startActivity(toBuyTickets);
             }
         });
     }
