@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="101dp">
+        tools:layout_editor_absoluteY="101dp"
+        tools:ignore="MissingConstraints">
 
         <com.moaadticket.moaadticket.AutofitRecyclerView
             android:id="@+id/recycler_view"
