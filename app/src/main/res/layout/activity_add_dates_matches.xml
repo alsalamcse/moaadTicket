@@ -1,87 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Octagon5App.SpendList" Padding="0" Title="Spend">
-    <ContentPage.Content>
-        <StackLayout Orientation="Vertical" x:Name="MainLayout" BackgroundColor="White" Margin="0">
-            <StackLayout.Padding>
-                <OnPlatform x:TypeArguments="Thickness">
-                    <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
-                    <OnPlatform.Android>0,0,0,0</OnPlatform.Android>
-                </OnPlatform>
-            </StackLayout.Padding>
-            <StackLayout Orientation="Horizontal" Padding="0,0,20,0">
-                <SearchBar FontSize="14" HorizontalOptions="StartAndExpand" Placeholder="Search" x:Name="searchBar" BackgroundColor="Transparent" WidthRequest="200"
-                    TextColor = "#8e8e91"
-                    PlaceholderColor = "#8e8e91"
-                    TextChanged="FilterSpend">
-                </SearchBar>
-                <Button Text="Dates" Clicked="ShowAdvanced" TextColor="#8e8e91" BackgroundColor="Transparent"></Button>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Style="{StaticResource StackRow}" x:Name="AdvancedLayout" IsVisible="false">
-                <StackLayout HorizontalOptions="Start">
-                    <Label Text="Sort by Entry Date" />
-                    <Switch HorizontalOptions="Center" VerticalOptions="Center" Scale="0.6" x:Name="SortEntryDateToggle" Toggled="SortByEntryDate"></Switch>
-                </StackLayout>
-                <StackLayout HorizontalOptions="Start">
-                    <Label Text="FROM1" />
-                    <DatePicker x:Name="FromDate"  Scale="0.9" DateSelected="FilterDates" TextColor="#8e8e91">
-                    </DatePicker>
-                </StackLayout>
-                <StackLayout HorizontalOptions="Start" >
-                    <Label Text="TO" />
-                    <DatePicker x:Name="ToDate"  Scale="0.9" DateSelected="FilterDates" TextColor="#8e8e91">
-                    </DatePicker>
-                </StackLayout>
-            </StackLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.main.MainActivity">
 
-            <AbsoluteLayout Padding="20,0,20,0" >
-                <ListView AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" ItemsSource="{Binding .}" IsGroupingEnabled="true" IsPullToRefreshEnabled="true" Refreshing="OnListRefresh" ItemTapped="OnItemTapped"
-                    >
-                    <!-- Group Header -->
-                    <ListView.GroupHeaderTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                                        <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="14" VerticalOptions="Center" />
-                                        <Label Text="{Binding Total, StringFormat='{0:N2}'}" FontSize="14" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="#f35e20" />
-                                    </StackLayout>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.GroupHeaderTemplate>
-                    <!-- End Group Header -->
-                    <ListView.ItemTemplate>
-                        <DataTemplate >
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                                        <!-- Icon for the picture. -->
-                                        <Image Source="{Binding Icon}" Scale=".5">
-                                        </Image>
-                                        <ActivityIndicator IsVisible="{Binding ShowBusy}" IsRunning="{Binding ShowBusy}" Color="Black" />
-                                        <Label Text="{Binding ContactName}" FontSize="14" VerticalOptions="Center" LineBreakMode="TailTruncation">
-                                        </Label>
-                                        <Label Text="{Binding TotalAmount, StringFormat='{0:N2}'}" FontSize="14" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="#f35e20" LineBreakMode="NoWrap">
-                                        </Label>
-                                    </StackLayout>
-                                </ViewCell.View>
-                                <ViewCell.ContextActions>
-                                    <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="Edit" />
-                                    <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
-                                </ViewCell.ContextActions>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <!--<BoxView Color="White" Opacity="0.7" AbsoluteLayout.LayoutBounds="1,1,1,0.1" AbsoluteLayout.LayoutFlags="All" />-->
-                <Image Source="addSpend.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="1,1" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="45">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnAddSpendTapped" NumberOfTapsRequired="1" />
-                    </Image.GestureRecognizers>
-                </Image>
-            </AbsoluteLayout>
+    <Spinner
+        android:id="@+id/spinnerMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/small_padding_6"
+        android:paddingRight="@dimen/small_padding_6">
+    </Spinner>
 
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    <ProgressBar
+        android:id="@+id/mainProgressBar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/spinnerMatch"
+        android:layout_marginTop="@dimen/small_margin_8"
+        android:id="@+id/rvFootball"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
