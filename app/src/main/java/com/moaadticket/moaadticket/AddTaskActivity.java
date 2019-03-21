@@ -6,35 +6,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
+
+import java.util.Date;
 
 public class AddTaskActivity extends AppCompatActivity {
-    private EditText etTitle;
-    private EditText etText;
-    private SeekBar skbrImportant;
-    private SeekBar skbrNecessary;
-    private Button btnSave;
-    private EditText etDueDate;
-    private Button btnDatePicker;
+    private EditText edtMatch, edtTime, edtDate;
+    private TextView tvDate, tvTime, tvMatch;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
-        etTitle=findViewById(R.id.etTitle);
-        etDueDate=findViewById(R.id.etDueDate);
-        etText=findViewById(R.id.etText);
-        skbrImportant=findViewById(R.id.skbrImpotant);
-        skbrNecessary=findViewById(R.id.skbrNeccesary);
-        btnSave=findViewById(R.id.btnSave);
-        btnDatePicker=findViewById(R.id.btnDatePicker);
-        btnDatePicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        edtDate = (EditText) findViewById(R.id.edtDate);
+        edtTime = (EditText) findViewById(R.id.edtTime);
+        edtMatch = (EditText) findViewById(R.id.edtMatch);
 
-            }
-        });
-
+        tvDate = (TextView) findViewById(R.id.tvDate);
+        tvTime = (TextView) findViewById(R.id.tvTime);
+        tvMatch = (TextView) findViewById(R.id.tvMatch);
     }
-    }
-
+}

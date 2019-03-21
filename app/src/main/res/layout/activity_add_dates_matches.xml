@@ -1,265 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddDatesMatches">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Octagon5App.SpendList" Padding="0" Title="Spend">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" x:Name="MainLayout" BackgroundColor="White" Margin="0">
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+                    <OnPlatform.Android>0,0,0,0</OnPlatform.Android>
+                </OnPlatform>
+            </StackLayout.Padding>
+            <StackLayout Orientation="Horizontal" Padding="0,0,20,0">
+                <SearchBar FontSize="14" HorizontalOptions="StartAndExpand" Placeholder="Search" x:Name="searchBar" BackgroundColor="Transparent" WidthRequest="200"
+                    TextColor = "#8e8e91"
+                    PlaceholderColor = "#8e8e91"
+                    TextChanged="FilterSpend">
+                </SearchBar>
+                <Button Text="Dates" Clicked="ShowAdvanced" TextColor="#8e8e91" BackgroundColor="Transparent"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Style="{StaticResource StackRow}" x:Name="AdvancedLayout" IsVisible="false">
+                <StackLayout HorizontalOptions="Start">
+                    <Label Text="Sort by Entry Date" />
+                    <Switch HorizontalOptions="Center" VerticalOptions="Center" Scale="0.6" x:Name="SortEntryDateToggle" Toggled="SortByEntryDate"></Switch>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Start">
+                    <Label Text="FROM1" />
+                    <DatePicker x:Name="FromDate"  Scale="0.9" DateSelected="FilterDates" TextColor="#8e8e91">
+                    </DatePicker>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Start" >
+                    <Label Text="TO" />
+                    <DatePicker x:Name="ToDate"  Scale="0.9" DateSelected="FilterDates" TextColor="#8e8e91">
+                    </DatePicker>
+                </StackLayout>
+            </StackLayout>
 
-    <TextView
-        android:id="@+id/tvMatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:text="Teams :"
-        android:textColor="@android:color/holo_red_dark"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="33dp"
-        tools:text="Teams :" />
+            <AbsoluteLayout Padding="20,0,20,0" >
+                <ListView AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" ItemsSource="{Binding .}" IsGroupingEnabled="true" IsPullToRefreshEnabled="true" Refreshing="OnListRefresh" ItemTapped="OnItemTapped"
+                    >
+                    <!-- Group Header -->
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                        <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="14" VerticalOptions="Center" />
+                                        <Label Text="{Binding Total, StringFormat='{0:N2}'}" FontSize="14" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="#f35e20" />
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
+                    <!-- End Group Header -->
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                        <!-- Icon for the picture. -->
+                                        <Image Source="{Binding Icon}" Scale=".5">
+                                        </Image>
+                                        <ActivityIndicator IsVisible="{Binding ShowBusy}" IsRunning="{Binding ShowBusy}" Color="Black" />
+                                        <Label Text="{Binding ContactName}" FontSize="14" VerticalOptions="Center" LineBreakMode="TailTruncation">
+                                        </Label>
+                                        <Label Text="{Binding TotalAmount, StringFormat='{0:N2}'}" FontSize="14" VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="#f35e20" LineBreakMode="NoWrap">
+                                        </Label>
+                                    </StackLayout>
+                                </ViewCell.View>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="Edit" />
+                                    <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!--<BoxView Color="White" Opacity="0.7" AbsoluteLayout.LayoutBounds="1,1,1,0.1" AbsoluteLayout.LayoutFlags="All" />-->
+                <Image Source="addSpend.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="1,1" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="45">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAddSpendTapped" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </AbsoluteLayout>
 
-    <EditText
-        android:id="@+id/edtMatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="136dp"
-        android:ems="10"
-        android:hint="Insert Teams Name"
-        android:inputType="textAutoComplete|textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
 
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Match Date"
-        android:textColor="@android:color/holo_red_dark"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="219dp"
-        tools:text="Match Date" />
-
-    <EditText
-        android:id="@+id/edtDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:ems="10"
-        android:hint="Insert Match Date"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="200dp" />
-
-    <TextView
-        android:id="@+id/tvTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Match Time :"
-        android:textColor="@android:color/holo_red_dark"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="286dp" />
-
-    <EditText
-        android:id="@+id/edtTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:ems="10"
-        android:hint="Insert Match Time"
-        android:inputType="time"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="269dp" />
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="365dp"-->
-        <!--android:layout_height="305dp"-->
-        <!--android:orientation="horizontal"-->
-        <!--tools:layout_editor_absoluteX="4dp"-->
-        <!--tools:layout_editor_absoluteY="206dp">-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="364dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<TableLayout-->
-
-                <!--android:layout_width="363dp"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:gravity="center"-->
-                <!--android:stretchColumns="0,1,2"-->
-                <!--tools:ignore="MissingConstraints"-->
-                <!--tools:layout_editor_absoluteX="4dp"-->
-                <!--tools:layout_editor_absoluteY="181dp">-->
-
-                <!--<TableRow-->
-                    <!--android:layout_width="fill_parent"-->
-                    <!--android:layout_height="0dp"-->
-                    <!--android:layout_margin="1dp"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:background="#000000"-->
-
-                    <!--&gt;-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="0"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text="Fixture Team"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-                        <!--android:textStyle="bold" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="73dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="1"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text="Date"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-                        <!--android:textStyle="bold" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="67dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="2"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text="Calories"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-                        <!--android:textStyle="bold"-->
-                        <!--tools:text="Time" />-->
-                <!--</TableRow>-->
-
-                <!--<TableRow-->
-                    <!--android:layout_width="fill_parent"-->
-                    <!--android:layout_height="0dp"-->
-                    <!--android:layout_margin="1dp"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:background="#000000">-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="0"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-
-                    <!--<TextView-->
-                        <!--android:id="@+id/et1"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="1"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="6dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="2"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-                <!--</TableRow>-->
-
-
-                <!--<TableRow-->
-                    <!--android:layout_width="fill_parent"-->
-                    <!--android:layout_height="0dp"-->
-                    <!--android:layout_margin="1dp"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:background="#000000">-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="0"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="1"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="2"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-                <!--</TableRow>-->
-
-                <!--<TableRow-->
-                    <!--android:layout_width="fill_parent"-->
-                    <!--android:layout_height="0dp"-->
-                    <!--android:layout_margin="1dp"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:background="#000000">-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="0"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="1"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_column="2"-->
-                        <!--android:layout_margin="1dp"-->
-                        <!--android:background="#FFFFFF"-->
-                        <!--android:gravity="center"-->
-                        <!--android:text=" Text"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceLarge" />-->
-                <!--</TableRow>-->
-
-
-            <!--</TableLayout>-->
-        <!--</LinearLayout>-->
-    <!--</LinearLayout>-->
-
-</android.support.constraint.ConstraintLayout>

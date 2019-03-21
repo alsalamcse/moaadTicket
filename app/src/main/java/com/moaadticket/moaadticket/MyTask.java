@@ -1,15 +1,18 @@
 package com.moaadticket.moaadticket;
+import android.widget.EditText;
+
+import java.sql.Time;
 import java.util.Date;
 
 public class MyTask {
     private String Key;//key; unique id for each object .have to be
-    private String title;
+    private String tvDate ,tvMatch ,tvTime;
     private String text;
-    private int important;
-    private int necessary;
+    private String edtMatch;
     private Date createdAt;
-    private Date dueDate;
+    private Date edtDate;
     private String owner;
+    private Time edtTime;
 
 
     public MyTask(String key) {
@@ -24,20 +27,20 @@ public class MyTask {
         return Key;
     }
 
-    public String getTitle() {
-        return title;
+    public String getEdtMatch() {
+        return edtMatch;
+    }
+
+    public String getTvTime() {
+        return tvTime;
+    }
+
+    public String getTvDate() {
+        return tvDate;
     }
 
     public String getText() {
         return text;
-    }
-
-    public int getImportant() {
-        return important;
-    }
-
-    public int getNecessary() {
-        return necessary;
     }
 
     public Date getCreatedAt() {
@@ -45,7 +48,7 @@ public class MyTask {
     }
 
     public Date getDueDate() {
-        return dueDate;
+        return edtDate;
     }
 
     public void setKey(String key) {
@@ -53,27 +56,21 @@ public class MyTask {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.tvMatch = tvMatch;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setText(EditText text) {
+        this.text = edtMatch;
     }
 
-    public void setImportant(int important) {
-        this.important = important;
-    }
 
-    public void setNecessary(int necessary) {
-        this.necessary = necessary;
-    }
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
     public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
+        this.edtDate = dueDate;
     }
     public String getOwner()
     {
@@ -88,13 +85,16 @@ public class MyTask {
     public String toString() {
         return "MyTask{" +
                 "Key='" + Key + '\'' +
-                ", title='" + title + '\'' +
+                ", tvMatch='" + tvDate + '\'' +
+                ", tvMatch='" + tvTime + '\'' +
+                ", tvMatch='" + tvMatch + '\'' +
                 ", text='" + text + '\'' +
-                ", important=" + important +
-                ", necessary=" + necessary +
                 ", createdAt=" + createdAt +
-                ", dueDate=" + dueDate +
+                ", dueDate=" + edtDate+
                 '}';
+    }
+
+    public void setTime(EditText edtTime) {
     }
 }
 
