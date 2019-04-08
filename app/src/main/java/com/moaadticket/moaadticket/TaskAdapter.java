@@ -1,9 +1,5 @@
 package com.moaadticket.moaadticket;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,9 +29,7 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
         SeekBar skpImp=convertView.findViewById(R.id.skbitemImp);
         ImageButton ibDel=convertView.findViewById(R.id.btnitemDel);
         tvText.setText(m.getText());
-        tvTitle.setText(m.getTitle());
-        skpImp.setProgress(m.getImportant());
-        skpNess.setProgress(m.getNecessary());
+
         ibDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
