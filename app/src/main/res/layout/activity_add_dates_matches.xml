@@ -5,7 +5,13 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 tools:context=".AddDatesMatches">.
-
+    <Spinner
+        android:id="@+id/spinnerMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/small_padding_6"
+        android:paddingRight="@dimen/small_padding_6">
+    </Spinner>
 
     <ProgressBar
         android:id="@+id/mainProgressBar"
@@ -14,6 +20,7 @@ tools:context=".AddDatesMatches">.
         android:layout_centerInParent="true"/>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/spinnerMatch"
         android:layout_marginTop="20dp"
         android:id="@+id/rvFootball"
         android:layout_width="match_parent"
