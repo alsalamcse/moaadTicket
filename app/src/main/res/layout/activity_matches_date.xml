@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".matches_date">
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        />
+    <div id="demo-mobile-month-view"
+        tools:ignore="MissingPrefix"></div>
 
-    <ListView
-        android:id="@+id/lv1"
-        android:layout_width="368dp"
-        android:layout_height="503dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>
