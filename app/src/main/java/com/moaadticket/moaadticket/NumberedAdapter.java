@@ -8,12 +8,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class NumberedAdapter extends RecyclerView.Adapter<NumberedAdapter.ViewHolder> {
     private List<String> labels;
+    private DatabaseReference ref;
+    private FirebaseUser user;
+
+
 
     public NumberedAdapter(int count) {
         labels = new ArrayList<>(count);
@@ -38,7 +47,16 @@ public class NumberedAdapter extends RecyclerView.Adapter<NumberedAdapter.ViewHo
             @Override
             public void onClick(View v) {
                 Toast.makeText(holder.textView.getContext(), label, Toast.LENGTH_SHORT).show();
+                user = FirebaseAuth.getInstance().getCurrentUser();
+                ref = FirebaseDatabase.getInstance().getReference().child("Tickets");
+
+                ref.push().child("new tick").setValue(label+ " " +user.getEmail());
+
+               // ref.setValue(label +" "+ user.getEmail());
+
+
                 Intent toBuyTickets=new Intent(holder.textView.getContext(),BuyTickets.class);
+                toBuyTickets.putExtra("label name" , label);
                 holder.textView.getContext().startActivity(toBuyTickets);
             }
         });

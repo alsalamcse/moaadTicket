@@ -15,19 +15,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "501668783090-28j37q878o8oh427i0clmqtk7hc0f5gd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.moaadticket.moaadticket",
-            "certificate_hash": "3d920b70f8988634c1ed27ef030165a28458403c"
-          }
-        },
-        {
           "client_id": "501668783090-lg2l39kr96ddhdr54dc6mpikamnjqtt3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.moaadticket.moaadticket",
             "certificate_hash": "8d4e87598d212bdb282d05faa7766dc9c486dbdf"
+          }
+        },
+        {
+          "client_id": "501668783090-28j37q878o8oh427i0clmqtk7hc0f5gd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moaadticket.moaadticket",
+            "certificate_hash": "3d920b70f8988634c1ed27ef030165a28458403c"
           }
         },
         {
@@ -41,20 +41,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "501668783090-laeqan6lepudk3b1kqm4gjugausphfq5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

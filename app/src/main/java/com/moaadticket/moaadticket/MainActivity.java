@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
             Intent toAddDatesMatches = new Intent(MainActivity.this, AddDatesMatches.class);
             startActivity(toAddDatesMatches);
+
     }
 
 }

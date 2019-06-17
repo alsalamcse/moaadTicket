@@ -1,9 +1,8 @@
 package com.moaadticket.moaadticket;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +13,7 @@ public class BuyTickets extends AppCompatActivity {
     private TextView tvPrice;
     private EditText etEmail;
     private Button btnNow;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,10 @@ public class BuyTickets extends AppCompatActivity {
         btnNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = getIntent();
+                 String labelName1 = intent.getStringExtra("label name");
                 Intent toTheTicket=new Intent(BuyTickets.this,TheTicket.class);
+                toTheTicket.putExtra("dd" , labelName1);
                 startActivity(toTheTicket);
             }
         });
